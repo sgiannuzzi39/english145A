@@ -8,7 +8,7 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <style>
         body {
-            font-family: 'Helvetica', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f7f7f7;
             margin: 0;
             padding: 0;
@@ -21,8 +21,10 @@
         
         h2 {
             text-align: center;
-            font-size: 24px;
-            color: #333;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
         
         svg {
@@ -36,11 +38,11 @@
         
         .tooltip {
             position: absolute;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(44, 62, 80, 0.9);
             color: white;
             border-radius: 5px;
             padding: 8px;
-            font-size: 12px;
+            font-size: 14px;
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -67,15 +69,15 @@
         }
         
         .legend-text {
-            font-size: 14px;
-            color: #555;
+            font-size: 16px;
+            color: #34495e;
         }
         
         .word-count {
             margin-top: 20px;
             text-align: center;
-            font-size: 16px;
-            color: #333;
+            font-size: 18px;
+            color: #34495e;
         }
     </style>
 </head>
@@ -88,29 +90,25 @@
 
     <div id="tooltip" class="tooltip"></div>
 
-    <!-- Color Legend for the categories -->
     <div class="legend">
         <div>
-            <span style="background-color: blue;"></span>
+            <span style="background-color: #3498db;"></span>
             <span class="legend-text">Polite Words</span>
         </div>
         <div>
-            <span style="background-color: green;"></span>
+            <span style="background-color: #2ecc71;"></span>
             <span class="legend-text">Formal Words</span>
         </div>
         <div>
-            <span style="background-color: orange;"></span>
+            <span style="background-color: #e74c3c;"></span>
             <span class="legend-text">Lexical Rich Words</span>
         </div>
     </div>
 
-    <!-- Word Count Legend -->
     <div class="word-count" id="word-count-legend">
-        <!-- The count of words will be inserted here -->
     </div>
 
     <script>
-        // Set up the SVG canvas dimensions
         const width = 1000;
         const height = 500;
         const margin = {
@@ -120,36 +118,37 @@
             bottom: 40
         };
 
-        // Define the categories and their corresponding colors
         const categoryColors = {
-            "polite": "blue",
-            "formal": "green",
-            "lexical_rich": "orange"
+            "polite": "#3498db",
+            "formal": "#2ecc71",
+            "lexical_rich": "#e74c3c"
         };
 
-        // Create the tooltip
         const tooltip = d3.select("#tooltip");
 
-        // Function to generate random X positions for scattering, keeping words on the left or right
-        function randomX(centerX) {
-            const scatterRange = 350; // Increase the scatter range for more horizontal spread
-            return centerX + (Math.random() - 0.5) * scatterRange;
+        function groupedX(centerX, index, totalWords) {
+            const scatterRange = 400;
+            return centerX + ((index / totalWords) - 0.5) * scatterRange;
         }
 
-        // Function to generate random Y positions for scattering
-        function randomY() {
-            const scatterRangeY = height - margin.top - margin.bottom; // Control the range of Y scattering
-            return Math.random() * scatterRangeY + margin.top;
+        function groupedY(category) {
+            const sectionHeight = height / 3 - 10;
+            if (category === "polite") {
+                return Math.random() * sectionHeight + margin.top;
+            } else if (category === "formal") {
+                return Math.random() * sectionHeight + sectionHeight - 20;
+            } else {
+                return Math.random() * sectionHeight + 2 * sectionHeight - 30;
+            }
         }
 
-        // Function to plot words from a letter with random X and Y positioning
         function plotWords(svg, data, letter, centerX, category, color) {
             svg.selectAll(`.dot-${category}-${letter}`)
                 .data(data[letter][category])
                 .enter()
                 .append("circle")
-                .attr("cx", d => randomX(centerX))
-                .attr("cy", d => randomY())
+                .attr("cx", (d, i) => groupedX(centerX, i, data[letter][category].length))
+                .attr("cy", () => groupedY(category))
                 .attr("r", 8)
                 .style("fill", color)
                 .style("stroke", "white")
@@ -170,29 +169,23 @@
                 });
         }
 
-        // Load the word categories JSON data
         d3.json("word_categories.json").then(function(data) {
             const svg = d3.select("#words-plot")
                 .attr("width", width)
                 .attr("height", height);
 
-            // Plot words for Letter 1 (left) and Letter 2 (right) in different categories
-            const letter1CenterX = width * 0.25; // Center for letter 1, left side
-            const letter2CenterX = width * 0.75; // Center for letter 2, right side
+            const letter1CenterX = width * 0.25;
+            const letter2CenterX = width * 0.75;
 
-            // Plot polite words
             plotWords(svg, data, "letter1", letter1CenterX, "polite", categoryColors["polite"]);
             plotWords(svg, data, "letter2", letter2CenterX, "polite", categoryColors["polite"]);
 
-            // Plot formal words
             plotWords(svg, data, "letter1", letter1CenterX, "formal", categoryColors["formal"]);
             plotWords(svg, data, "letter2", letter2CenterX, "formal", categoryColors["formal"]);
 
-            // Plot lexically rich words
             plotWords(svg, data, "letter1", letter1CenterX, "lexical_rich", categoryColors["lexical_rich"]);
             plotWords(svg, data, "letter2", letter2CenterX, "lexical_rich", categoryColors["lexical_rich"]);
 
-            // Add titles for left (Letter 1) and right (Letter 2)
             svg.append("text")
                 .attr("x", letter1CenterX)
                 .attr("y", margin.top / 2)
@@ -209,9 +202,7 @@
                 .style("fill", "#333")
                 .text("Letter 2");
 
-            // Update the word count legend with the count of words in each category for each letter
             document.getElementById("word-count-legend").innerHTML = `
-            <br> <br> 
                 <strong>Letter 1:</strong> 
                 Polite: ${data.letter1.polite.length}, Formal: ${data.letter1.formal.length}, Lexical Rich: ${data.letter1.lexical_rich.length} <br>
                 <strong>Letter 2:</strong> 

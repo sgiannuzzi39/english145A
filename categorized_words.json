@@ -1,0 +1,3010 @@
+{
+    "letter1": [{
+            "word": "bond",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "street",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "january",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "dear",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "madam",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "just",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "had",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "honour",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "receiving",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "letter",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "for",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "beg",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "return",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "sincere",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "acknowledgments",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "much",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "concerned",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "find",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "there",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "was",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "anything",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "behaviour",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "last",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "night",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "did",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "not",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "meet",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "approbation",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "and",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "though",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "quite",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "at",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "a",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "loss",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "discover",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "point",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "could",
+            "polite": true,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "so",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "unfortunate",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "as",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "offend",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "entreat",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "forgiveness",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "can",
+            "polite": true,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "assure",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "perfectly",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "unintentional",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "shall",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": false
+        },
+        {
+            "word": "never",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "reflect",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "on",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "former",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "acquaintance",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "with",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "family",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "devonshire",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "without",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "most",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "grateful",
+            "polite": true,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "pleasure",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "and",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "flatter",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "myself",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "will",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "not",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "broken",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "by",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "any",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "mistake",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "or",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "misapprehension",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "actions",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "esteem",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "for",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "whole",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "family",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "is",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "very",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "sincere",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "but",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "if",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "so",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "unfortunate",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "as",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "give",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "rise",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "a",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "belief",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "more",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "than",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "felt",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "or",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "meant",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "express",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "shall",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": false
+        },
+        {
+            "word": "reproach",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "myself",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "for",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "not",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "having",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "more",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "guarded",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "professions",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "esteem",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "should",
+            "polite": true,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "ever",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "meant",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "more",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "will",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "allow",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "impossible",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "when",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "understand",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "affections",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "long",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "engaged",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "elsewhere",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "and",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "will",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "not",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "many",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "weeks",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "believe",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "before",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "this",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "engagement",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "is",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "fulfilled",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "is",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "with",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "great",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "regret",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "obey",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "commands",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "returning",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "letters",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "with",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "honoured",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "from",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "and",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "lock",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "hair",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "so",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "obligingly",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "bestowed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "on",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "dear",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "madam",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "most",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "obedient",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "humble",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "servant",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "john",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "willoughby",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        }
+    ],
+    "letter2": [{
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "imagine",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "willoughby",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "by",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "behaviour",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "last",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "night",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "again",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "demand",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "an",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "explanation",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "was",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "prepared",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "meet",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "with",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "pleasure",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "our",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "separation",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "naturally",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "produced",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "with",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "familiarity",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "our",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "intimacy",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "at",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "barton",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "appeared",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "justify",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "was",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "repulsed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "indeed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "passed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "a",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "wretched",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "night",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "endeavouring",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "excuse",
+            "polite": true,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "a",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "conduct",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "can",
+            "polite": true,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "scarcely",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "called",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "less",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "than",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "insulting",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "but",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "though",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "not",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "yet",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "able",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "form",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "any",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "reasonable",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "apology",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "for",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "behaviour",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "perfectly",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "ready",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "hear",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "justification",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "perhaps",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "been",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "misinformed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "or",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "purposely",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "deceived",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "something",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "concerning",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "may",
+            "polite": true,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "lowered",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "opinion",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "tell",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "is",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "explain",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "grounds",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "on",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "acted",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "and",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "shall",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "satisfied",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "being",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "able",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "satisfy",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "would",
+            "polite": true,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "grieve",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "indeed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "obliged",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "think",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "ill",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "but",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "if",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "do",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "if",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "am",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "learn",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "are",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "not",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "we",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "have",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "hitherto",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "believed",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "regard",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "for",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "us",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "all",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "was",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "insincere",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "that",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "behaviour",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "me",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "was",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "intended",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "only",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "deceive",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "let",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "it",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "told",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "as",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "soon",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "as",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "possible",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "feelings",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "are",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "at",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "present",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "a",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "state",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "dreadful",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "indecision",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "wish",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "acquit",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "but",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "certainty",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "on",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "either",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "side",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "will",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "be",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "ease",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "to",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "i",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "now",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "suffer",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "if",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "sentiments",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "are",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "no",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "longer",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "what",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "they",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "were",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "you",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "will",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "return",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "notes",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "and",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "the",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "lock",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "of",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "my",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "hair",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "which",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "is",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "in",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "your",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        },
+        {
+            "word": "possession",
+            "polite": false,
+            "formal": true,
+            "lexical_rich": true
+        },
+        {
+            "word": "md",
+            "polite": false,
+            "formal": false,
+            "lexical_rich": false
+        }
+    ]
+}
