@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Categories Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        svg {
+            width: 800px;
+            height: 400px;
+            border: 1px solid lightgray;
+            margin-bottom: 20px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: lightgray;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 6px;
+            pointer-events: none;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Polite Words in Letter 1 and Letter 2</h2>
+    <svg id="polite-plot"></svg>
+
+    <h2>Formal Words in Letter 1 and Letter 2</h2>
+    <svg id="formal-plot"></svg>
+
+    <h2>Lexically Rich Words in Letter 1 and Letter 2</h2>
+    <svg id="lexical-rich-plot"></svg>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script>
+        // Set up the SVG canvas dimensions
+        const width = 800;
+        const height = 400;
+
+        // Create the tooltip
+        const tooltip = d3.select("#tooltip");
+
+        // Create random positioning functions for the scatter plot
+        function randomX() {
+            return Math.random() * (width - 100) + 50;
+        }
+
+        function randomY() {
+            return Math.random() * (height - 100) + 50;
+        }
+
+        // Function to plot words
+        function plotWords(svgId, data, title) {
+            const svg = d3.select(svgId)
+                .attr("width", width)
+                .attr("height", height);
+
+            const allWords = data.letter1.concat(data.letter2);
+            const colors = d3.scaleOrdinal().domain([0, 1]).range(["blue", "green"]);
+
+            svg.selectAll("circle")
+                .data(allWords)
+                .enter()
+                .append("circle")
+                .attr("cx", d => randomX())
+                .attr("cy", d => randomY())
+                .attr("r", 8)
+                .style("fill", (d, i) => i < data.letter1.length ? colors(0) : colors(1))
+                .attr("stroke", "black")
+                .on("mouseover", function(event, d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", 0.9);
+                    tooltip.html(`Word: ${d}`)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                })
+                .on("mouseout", function() {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", 0);
+                });
+
+            // Add title to the plot
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 30)
+                .attr("text-anchor", "middle")
+                .style("font-size", "16px")
+                .text(title);
+        }
+
+        // Load the word categories JSON data
+        d3.json("word_categories.json").then(function(data) {
+            // Plot polite words
+            plotWords("#polite-plot", {
+                letter1: data.letter1.polite,
+                letter2: data.letter2.polite
+            }, "Polite Words");
+
+            // Plot formal words
+            plotWords("#formal-plot", {
+                letter1: data.letter1.formal,
+                letter2: data.letter2.formal
+            }, "Formal Words");
+
+            // Plot lexically rich words
+            plotWords("#lexical-rich-plot", {
+                letter1: data.letter1.lexical_rich,
+                letter2: data.letter2.lexical_rich
+            }, "Lexically Rich Words");
+        });
+    </script>
+
+</body>
+
+</html>
