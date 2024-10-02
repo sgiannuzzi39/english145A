@@ -4,339 +4,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Categories Visualization</title>
+    <title>Text Analysis Visualization</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f7f7f7;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 20px;
         }
         
         h2 {
             text-align: center;
             font-size: 28px;
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
         }
         
-        svg {
-            width: 1000px;
-            height: 600px;
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        
+        table,
+        th,
+        td {
             border: 1px solid #ddd;
-            background-color: #f4f4f9;
-            margin-bottom: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .tooltip {
-            position: absolute;
-            background: rgba(44, 62, 80, 0.9);
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #2c3e50;
             color: white;
-            border-radius: 5px;
-            padding: 8px;
-            font-size: 14px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
         
-        .legend {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+        td {
+            background-color: #f4f4f9;
         }
         
-        .legend div {
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
+        .chart {
+            margin: 40px auto;
+            max-width: 1000px;
         }
         
-        .legend span {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            margin-right: 8px;
+        .axis text {
+            font-size: 12px;
         }
         
-        .legend-text {
-            font-size: 16px;
-            color: #34495e;
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+            stroke: #000;
         }
         
-        .word-count {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-            color: #34495e;
-        }
-        
-        .dropdowns {
-            margin-bottom: 20px;
-        }
-        
-        .dropdowns select {
-            padding: 5px;
-            font-size: 16px;
-        }
-        
-        .pie-chart-container {
-            display: flex;
-            justify-content: space-around;
-            width: 1000px;
-            margin-top: 30px;
-        }
-        
-        .pie-chart {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .pie-chart-title {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #2c3e50;
+        .bar-chart {
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
+    <h2>Text Analysis Table</h2>
+    <table id="word-category-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Polite (%)</th>
+                <th>Formal (%)</th>
+                <th>Lexically Rich (%)</th>
+                <th>Adjectives & Adverbs (%)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
-    <h2>Word Categories Visualization</h2>
-
-    <div class="dropdowns">
-        <label for="letter1">Select Letter 1:</label>
-        <select id="letter1"></select>
-
-        <label for="letter2">Select Letter 2:</label>
-        <select id="letter2"></select>
-
-        <button id="update-button">Update</button>
-    </div>
-
-    <svg id="words-plot"></svg>
-
-    <div id="tooltip" class="tooltip"></div>
-
-    <div class="legend">
-        <div>
-            <span style="background-color: #3498db;"></span>
-            <span class="legend-text">Polite Words</span>
-        </div>
-        <div>
-            <span style="background-color: #2ecc71;"></span>
-            <span class="legend-text">Formal Words</span>
-        </div>
-        <div>
-            <span style="background-color: #e74c3c;"></span>
-            <span class="legend-text">Lexical Rich Words</span>
-        </div>
-        <div>
-            <span style="background-color: #bdc3c7;"></span>
-            <span class="legend-text">Other Words</span>
-        </div>
-    </div>
-
-    <div class="word-count" id="word-count-legend"></div>
-
-    <div class="pie-chart-container">
-        <div>
-            <div class="pie-chart-title" id="pie-chart-title-letter1"></div>
-            <svg class="pie-chart" id="pie-chart-letter1"></svg>
-        </div>
-        <div>
-            <div class="pie-chart-title" id="pie-chart-title-letter2"></div>
-            <svg class="pie-chart" id="pie-chart-letter2"></svg>
-        </div>
-    </div>
+    <div id="person-bar-charts"></div>
 
     <script>
-        const width = 1000;
-        const height = 600;
-        const margin = {
-            left: 20,
-            right: 20,
-            top: 40,
-            bottom: 40
-        };
+        d3.json('word_categories.json').then(function(data) {
+            const combinedData = [
+                ...Object.entries(data.quotes).map(([filename, stats]) => ({
+                    file: filename,
+                    fileType: "speech",
+                    character: filename.split(" ")[0],
+                    polite: stats.polite / stats.total_words,
+                    formal: stats.formal / stats.total_words,
+                    lexical: stats.lexical_rich / stats.total_words,
+                    adj_adv: stats.adjectives_adverbs / stats.total_words
+                })),
+                ...Object.entries(data.letters).map(([filename, stats]) => ({
+                    file: filename,
+                    fileType: "letter",
+                    character: filename.split(" ")[0],
+                    polite: stats.polite / stats.total_words,
+                    formal: stats.formal / stats.total_words,
+                    lexical: stats.lexical_rich / stats.total_words,
+                    adj_adv: stats.adjectives_adverbs / stats.total_words
+                }))
+            ];
 
-        const categoryColors = {
-            "polite": "#3498db",
-            "formal": "#2ecc71",
-            "lexical_rich": "#e74c3c",
-            "other": "#bdc3c7"
-        };
+            const groupedData = d3.group(combinedData, d => d.character);
 
-        const tooltip = d3.select("#tooltip");
+            const tableBody = d3.select("#word-category-table tbody");
+            combinedData.forEach(d => {
+                const row = tableBody.append("tr");
+                row.append("td").text(d.file);
+                row.append("td").text((d.polite * 100).toFixed(2));
+                row.append("td").text((d.formal * 100).toFixed(2));
+                row.append("td").text((d.lexical * 100).toFixed(2));
+                row.append("td").text((d.adj_adv * 100).toFixed(2));
+            });
 
-        function groupedX(centerX, index, totalWords) {
-            const scatterRange = 400;
-            return centerX + ((index / totalWords) - 0.5) * scatterRange;
-        }
+            const margin = {
+                top: 40,
+                right: 20,
+                bottom: 50,
+                left: 90
+            };
+            const width = 800 - margin.left - margin.right;
+            const height = 400 - margin.top - margin.bottom;
 
-        function groupedY(category, yIndex) {
-            const sectionHeight = height / 4 - 10;
-            const categoryIndex = {
-                polite: 0,
-                formal: 1,
-                lexical_rich: 2,
-                other: 3
-            }[category];
-            return Math.random() * sectionHeight + margin.top + sectionHeight * categoryIndex;
-        }
+            const categories = ["polite", "formal", "lexical", "adj_adv"];
+            const categoryLabels = {
+                polite: "Polite",
+                formal: "Formal",
+                lexical: "Lexical Rich",
+                adj_adv: "Adjectives & Adverbs"
+            };
 
-        function plotWords(svg, data, letter, centerX, category, color) {
-            const words = data[letter][category] || [];
-            svg.selectAll(`.dot-${category}-${letter}`)
-                .data(words)
-                .enter()
-                .append("circle")
-                .attr("cx", (d, i) => groupedX(centerX, i, words.length))
-                .attr("cy", (d, i) => groupedY(category, i))
-                .attr("r", 8)
-                .style("fill", color)
-                .style("stroke", "white")
-                .style("stroke-width", 2)
-                .style("opacity", 0.9)
-                .on("mouseover", function(event, d) {
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", 1);
-                    tooltip.html(`Word: ${d}`)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 10) + "px");
-                })
-                .on("mouseout", function() {
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", 0);
+            const personBarChartsDiv = d3.select("#person-bar-charts");
+
+            groupedData.forEach((personData, character) => {
+                const chartData = [];
+                categories.forEach(category => {
+                    personData.forEach(d => {
+                        chartData.push({
+                            file: d.file,
+                            fileType: d.fileType,
+                            category: category,
+                            value: d[category]
+                        });
+                    });
                 });
-        }
 
-        function calculatePieData(data, letter) {
-            const politeCount = data[letter].polite.length;
-            const formalCount = data[letter].formal.length;
-            const lexicalRichCount = data[letter].lexical_rich.length;
-            const otherCount = data[letter].other ? data[letter].other.length : 0;
-            const totalWords = politeCount + formalCount + lexicalRichCount + otherCount;
+                const svg = personBarChartsDiv.append("div")
+                    .attr("class", "bar-chart")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", `translate(${margin.left},${margin.top})`);
 
-            return [{
-                category: "Polite",
-                count: politeCount
-            }, {
-                category: "Formal",
-                count: formalCount
-            }, {
-                category: "Lexical Rich",
-                count: lexicalRichCount
-            }, {
-                category: "Other",
-                count: otherCount
-            }];
-        }
+                const x0 = d3.scaleBand()
+                    .domain(categories)
+                    .range([0, width])
+                    .padding(0.2);
 
-        function drawPieChart(svg, pieData, letterName) {
-            const radius = Math.min(300, 300) / 2;
-            const pie = d3.pie().value(d => d.count);
-            const arc = d3.arc().innerRadius(0).outerRadius(radius);
+                const x1 = d3.scaleBand()
+                    .domain(personData.map(d => d.file))
+                    .range([0, x0.bandwidth()])
+                    .padding(0.05);
 
-            const g = svg.append("g")
-                .attr("transform", `translate(${radius},${radius})`);
+                const y = d3.scaleLinear()
+                    .domain([0, 1])
+                    .range([height, 0]);
 
-            const arcs = g.selectAll("arc")
-                .data(pie(pieData))
-                .enter()
-                .append("g");
+                const color = d3.scaleOrdinal()
+                    .domain(personData.map(d => d.file))
+                    .range(d3.schemeCategory10);
 
-            arcs.append("path")
-                .attr("d", arc)
-                .attr("fill", d => categoryColors[d.data.category.toLowerCase()]);
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", `translate(0, ${height})`)
+                    .call(d3.axisBottom(x0).tickFormat(d => categoryLabels[d]));
 
-            arcs.append("text")
-                .attr("transform", d => `translate(${arc.centroid(d)})`)
-                .attr("text-anchor", "middle")
-                .text(d => d.data.count > 0 ? d.data.category : "");
+                svg.append("g")
+                    .attr("class", "y axis")
+                    .call(d3.axisLeft(y).ticks(5));
 
-            d3.select(`#pie-chart-title-${letterName}`).text(`Pie Chart for ${letterName}`);
-        }
+                svg.append("text")
+                    .attr("x", width / 2)
+                    .attr("y", -10)
+                    .attr("text-anchor", "middle")
+                    .attr("font-size", "16px")
+                    .text(`Character: ${character}`);
 
-        function updateVisualization(data, letter1, letter2) {
-            const svg = d3.select("#words-plot").selectAll("*").remove();
-            const plotSvg = d3.select("#words-plot");
+                svg.selectAll(".bar-group")
+                    .data(categories)
+                    .enter()
+                    .append("g")
+                    .attr("class", "bar-group")
+                    .attr("transform", d => `translate(${x0(d)}, 0)`)
+                    .selectAll("rect")
+                    .data(category => personData.map(d => ({
+                        file: d.file,
+                        value: d[category]
+                    })))
+                    .enter()
+                    .append("rect")
+                    .attr("x", d => x1(d.file))
+                    .attr("y", d => y(d.value))
+                    .attr("width", x1.bandwidth())
+                    .attr("height", d => height - y(d.value))
+                    .attr("fill", d => color(d.file));
 
-            const letter1CenterX = width * 0.25;
-            const letter2CenterX = width * 0.75;
+                const legend = svg.append("g")
+                    .attr("class", "legend")
+                    .attr("transform", `translate(0, ${height + 20})`);
 
-            ["polite", "formal", "lexical_rich", "other"].forEach(category => {
-                plotWords(plotSvg, data, letter1, letter1CenterX, category, categoryColors[category]);
-                plotWords(plotSvg, data, letter2, letter2CenterX, category, categoryColors[category]);
-            });
+                personData.forEach((d, i) => {
+                    legend.append("rect")
+                        .attr("x", i * 100)
+                        .attr("y", 0)
+                        .attr("width", 10)
+                        .attr("height", 10)
+                        .attr("fill", color(d.file));
 
-            plotSvg.append("text")
-                .attr("x", letter1CenterX)
-                .attr("y", margin.top / 2)
-                .attr("text-anchor", "middle")
-                .style("font-size", "16px")
-                .style("fill", "#333")
-                .text(letter1);
-
-            plotSvg.append("text")
-                .attr("x", letter2CenterX)
-                .attr("y", margin.top / 2)
-                .attr("text-anchor", "middle")
-                .style("font-size", "16px")
-                .style("fill", "#333")
-                .text(letter2);
-
-            document.getElementById("word-count-legend").innerHTML = `
-                <strong>${letter1}:</strong> 
-                Polite: ${data[letter1].polite.length}, Formal: ${data[letter1].formal.length}, Lexical Rich: ${data[letter1].lexical_rich.length}, Other: ${data[letter1].other.length} <br>
-                <strong>${letter2}:</strong> 
-                Polite: ${data[letter2].polite.length}, Formal: ${data[letter2].formal.length}, Lexical Rich: ${data[letter2].lexical_rich.length}, Other: ${data[letter2].other.length}
-            `;
-
-            const letter1PieData = calculatePieData(data, letter1);
-            const letter2PieData = calculatePieData(data, letter2);
-
-            d3.select("#pie-chart-letter1").selectAll("*").remove();
-            d3.select("#pie-chart-letter2").selectAll("*").remove();
-
-            drawPieChart(d3.select("#pie-chart-letter1"), letter1PieData, letter1);
-            drawPieChart(d3.select("#pie-chart-letter2"), letter2PieData, letter2);
-        }
-
-        d3.json("word_categories.json").then(function(data) {
-            const dropdown1 = d3.select("#letter1");
-            const dropdown2 = d3.select("#letter2");
-
-            const letterNames = Object.keys(data);
-            letterNames.forEach(name => {
-                dropdown1.append("option").attr("value", name).text(name);
-                dropdown2.append("option").attr("value", name).text(name);
-            });
-
-            const defaultLetter1 = letterNames[0];
-            const defaultLetter2 = letterNames[1] || letterNames[0];
-
-            updateVisualization(data, defaultLetter1, defaultLetter2);
-
-            d3.select("#update-button").on("click", function() {
-                const selectedLetter1 = dropdown1.node().value;
-                const selectedLetter2 = dropdown2.node().value;
-                updateVisualization(data, selectedLetter1, selectedLetter2);
+                    legend.append("text")
+                        .attr("x", i * 100 + 20)
+                        .attr("y", 10)
+                        .text(d.fileType.charAt(0).toUpperCase() + d.fileType.slice(1));
+                });
             });
         });
     </script>
-
 </body>
 
 </html>
