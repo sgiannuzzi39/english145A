@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Analysis Visualization</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f7f7f7;
             margin: 0;
             padding: 20px;
@@ -17,7 +18,7 @@
         h2 {
             text-align: center;
             font-size: 28px;
-            color: #2c3e50;
+            color: #405880;
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
@@ -42,7 +43,7 @@
         }
         
         th {
-            background-color: #2c3e50;
+            background-color: #405880;
             color: white;
         }
         
@@ -52,7 +53,7 @@
         
         .chart {
             margin: 40px auto;
-            max-width: 1000px;
+            max-width: 1200px;
         }
         
         .axis text {
@@ -68,6 +69,42 @@
         
         .bar-chart {
             margin-top: 40px;
+            text-align: center;
+        }
+        
+        .legend-box {
+            font-size: 12px;
+            fill: #444;
+        }
+        
+        .legend-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .embedding-chart {
+            text-align: center;
+            margin: 40px auto;
+            width: 900px;
+            height: 600px;
+            border: 1px solid #ccc;
+        }
+        
+        .legend {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            pointer-events: none;
+            font-size: 12px;
+            color: #000;
         }
     </style>
 </head>
@@ -89,48 +126,72 @@
 
     <div id="person-bar-charts"></div>
 
+    <h2>Word Embeddings in Marianne's Speech versus Letters</h2>
+    <div id="embedding-chart" class="embedding-chart"></div>
+    <div class="legend">
+        <span style="color:#a3c1da;">■ Speech</span>
+        <span style="color:#2a63ad;">■ Letters</span>
+    </div>
+
     <script>
         d3.json('word_categories.json').then(function(data) {
-            const combinedData = [
-                ...Object.entries(data.quotes).map(([filename, stats]) => ({
-                    file: filename,
+            // TABLE
+            const combinedData = {};
+
+            Object.entries(data.quotes).forEach(([filename, stats]) => {
+                const character = filename.split(" ")[0];
+                if (!combinedData[character]) combinedData[character] = [];
+                combinedData[character].push({
+                    file: filename.includes("All Volumes") ? filename.replace("All Volumes", "All Vols") : filename,
                     fileType: "speech",
-                    character: filename.split(" ")[0],
+                    order: 1,
+                    character: character,
                     polite: stats.polite / stats.total_words,
                     formal: stats.formal / stats.total_words,
                     lexical: stats.lexical_rich / stats.total_words,
                     adj_adv: stats.adjectives_adverbs / stats.total_words
-                })),
-                ...Object.entries(data.letters).map(([filename, stats]) => ({
-                    file: filename,
-                    fileType: "letter",
-                    character: filename.split(" ")[0],
-                    polite: stats.polite / stats.total_words,
-                    formal: stats.formal / stats.total_words,
-                    lexical: stats.lexical_rich / stats.total_words,
-                    adj_adv: stats.adjectives_adverbs / stats.total_words
-                }))
-            ];
-
-            const groupedData = d3.group(combinedData, d => d.character);
-
-            const tableBody = d3.select("#word-category-table tbody");
-            combinedData.forEach(d => {
-                const row = tableBody.append("tr");
-                row.append("td").text(d.file);
-                row.append("td").text((d.polite * 100).toFixed(2));
-                row.append("td").text((d.formal * 100).toFixed(2));
-                row.append("td").text((d.lexical * 100).toFixed(2));
-                row.append("td").text((d.adj_adv * 100).toFixed(2));
+                });
             });
 
+            Object.entries(data.letters).forEach(([filename, stats]) => {
+                const character = filename.split(" ")[0];
+                let order = 2;
+                if (filename.includes("Second")) order = 3;
+                if (filename.includes("Third")) order = 4;
+
+                if (!combinedData[character]) combinedData[character] = [];
+                combinedData[character].push({
+                    file: filename,
+                    fileType: "letter",
+                    order: order,
+                    character: character,
+                    polite: stats.polite / stats.total_words,
+                    formal: stats.formal / stats.total_words,
+                    lexical: stats.lexical_rich / stats.total_words,
+                    adj_adv: stats.adjectives_adverbs / stats.total_words
+                });
+            });
+
+            const tableBody = d3.select("#word-category-table tbody");
+            Object.keys(combinedData).forEach(character => {
+                combinedData[character].forEach(d => {
+                    const row = tableBody.append("tr");
+                    row.append("td").text(d.file);
+                    row.append("td").text((d.polite * 100).toFixed(2));
+                    row.append("td").text((d.formal * 100).toFixed(2));
+                    row.append("td").text((d.lexical * 100).toFixed(2));
+                    row.append("td").text((d.adj_adv * 100).toFixed(2));
+                });
+            });
+
+            // BAR CHARTS
             const margin = {
                 top: 40,
                 right: 20,
                 bottom: 50,
                 left: 90
             };
-            const width = 800 - margin.left - margin.right;
+            const width = 1000 - margin.left - margin.right;
             const height = 400 - margin.top - margin.bottom;
 
             const categories = ["polite", "formal", "lexical", "adj_adv"];
@@ -141,20 +202,27 @@
                 adj_adv: "Adjectives & Adverbs"
             };
 
+            const colorPalette = ["#a3c1da", "#2a63ad", "#002b94", "#002b94", "#88b3d1", "#6fa5c8", "#578fbf", "#4079b6", "#1450a5", "#003d9c"];
+
             const personBarChartsDiv = d3.select("#person-bar-charts");
 
-            groupedData.forEach((personData, character) => {
-                const chartData = [];
-                categories.forEach(category => {
-                    personData.forEach(d => {
-                        chartData.push({
-                            file: d.file,
-                            fileType: d.fileType,
-                            category: category,
-                            value: d[category]
-                        });
-                    });
-                });
+            const characters = Object.keys(combinedData);
+            if (characters.includes("Marianne")) {
+                characters.splice(characters.indexOf("Marianne"), 1);
+                characters.unshift("Marianne");
+            }
+
+            characters.forEach(character => {
+                const personData = combinedData[character].sort((a, b) => a.order - b.order);
+
+                const chartData = categories.map(category => ({
+                    category,
+                    values: personData.map(d => ({
+                        file: d.file,
+                        fileType: d.fileType,
+                        value: d[category] * 100
+                    }))
+                }));
 
                 const svg = personBarChartsDiv.append("div")
                     .attr("class", "bar-chart")
@@ -175,12 +243,12 @@
                     .padding(0.05);
 
                 const y = d3.scaleLinear()
-                    .domain([0, 1])
+                    .domain([0, 30])
                     .range([height, 0]);
 
                 const color = d3.scaleOrdinal()
                     .domain(personData.map(d => d.file))
-                    .range(d3.schemeCategory10);
+                    .range(colorPalette);
 
                 svg.append("g")
                     .attr("class", "x axis")
@@ -192,23 +260,28 @@
                     .call(d3.axisLeft(y).ticks(5));
 
                 svg.append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", -60)
+                    .attr("x", -height / 2)
+                    .attr("dy", "1em")
+                    .style("text-anchor", "middle")
+                    .text("Proportion of Total Words (%)");
+
+                svg.append("text")
                     .attr("x", width / 2)
                     .attr("y", -10)
                     .attr("text-anchor", "middle")
                     .attr("font-size", "16px")
-                    .text(`Character: ${character}`);
+                    .text(`${character} Tonal Elements`);
 
                 svg.selectAll(".bar-group")
-                    .data(categories)
+                    .data(chartData)
                     .enter()
                     .append("g")
                     .attr("class", "bar-group")
-                    .attr("transform", d => `translate(${x0(d)}, 0)`)
+                    .attr("transform", d => `translate(${x0(d.category)}, 0)`)
                     .selectAll("rect")
-                    .data(category => personData.map(d => ({
-                        file: d.file,
-                        value: d[category]
-                    })))
+                    .data(d => d.values)
                     .enter()
                     .append("rect")
                     .attr("x", d => x1(d.file))
@@ -218,25 +291,99 @@
                     .attr("fill", d => color(d.file));
 
                 const legend = svg.append("g")
-                    .attr("class", "legend")
-                    .attr("transform", `translate(0, ${height + 20})`);
+                    .attr("class", "legend-box")
+                    .attr("transform", `translate(${width - 200}, 0)`);
+
+                legend.append("text")
+                    .attr("class", "legend-title")
+                    .attr("y", 0)
+                    .text("Legend");
 
                 personData.forEach((d, i) => {
                     legend.append("rect")
-                        .attr("x", i * 100)
-                        .attr("y", 0)
+                        .attr("x", 0)
+                        .attr("y", 20 + i * 20)
                         .attr("width", 10)
                         .attr("height", 10)
                         .attr("fill", color(d.file));
 
                     legend.append("text")
-                        .attr("x", i * 100 + 20)
-                        .attr("y", 10)
-                        .text(d.fileType.charAt(0).toUpperCase() + d.fileType.slice(1));
+                        .attr("x", 20)
+                        .attr("y", 30 + i * 20)
+                        .text(d.file);
                 });
             });
+
+        });
+
+        // EMBEDDING PLOT
+        const widthEmbedding = 900;
+        const heightEmbedding = 600;
+
+        const svgEmbedding = d3.select("#embedding-chart")
+            .append("svg")
+            .attr("width", widthEmbedding)
+            .attr("height", heightEmbedding)
+            .append("g");
+
+        const colorScale = {
+            "speech": "#a3c1da",
+            "letters": "#2a63ad"
+        };
+
+        d3.json("embedding_data.json").then(function(data) {
+
+            const xExtent = d3.extent(data, d => d.x);
+            const yExtent = d3.extent(data, d => d.y);
+
+            const xScale = d3.scaleLinear()
+                .domain(xExtent)
+                .range([50, widthEmbedding - 50]);
+
+            const yScale = d3.scaleLinear()
+                .domain(yExtent)
+                .range([heightEmbedding - 50, 50]);
+
+            svgEmbedding.selectAll("circle")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("cx", d => xScale(d.x))
+                .attr("cy", d => yScale(d.y))
+                .attr("r", 4)
+                .attr("fill", d => colorScale[d.source])
+                .attr("opacity", 0.7)
+                .attr("stroke", "#000")
+                .attr("stroke-width", 0.5)
+                .on("mouseover", function(event, d) {
+                    d3.select(this)
+                        .attr("r", 6)
+                        .attr("stroke-width", 1.5);
+
+                    const tooltip = d3.select("body").append("div")
+                        .attr("class", "tooltip")
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 20) + "px")
+                        .text(d.word);
+                })
+                .on("mousemove", function(event) {
+                    d3.select(".tooltip")
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 20) + "px");
+                })
+                .on("mouseout", function() {
+                    d3.select(this)
+                        .attr("r", 4)
+                        .attr("stroke-width", 0.5);
+
+                    d3.select(".tooltip").remove();
+                });
+
+            svgEmbedding.selectAll("g.axis").remove();
+
         });
     </script>
+
 </body>
 
 </html>

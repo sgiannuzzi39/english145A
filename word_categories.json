@@ -1,20 +1,20 @@
 {
     "quotes": {
-        "willoughby total": {
+        "Willoughby's Speech, All Volumes": {
             "polite": 125,
             "formal": 759,
             "lexical_rich": 1168,
             "adjectives_adverbs": 638,
             "total_words": 4744
         },
-        "Marianne's Direct Speech, All Volumes": {
+        "Marianne's Speech, All Volumes": {
             "polite": 156,
             "formal": 942,
             "lexical_rich": 1379,
             "adjectives_adverbs": 768,
             "total_words": 5746
         },
-        "lucy total": {
+        "Lucy's Speech, All Volumes": {
             "polite": 155,
             "formal": 369,
             "lexical_rich": 664,
@@ -23,26 +23,12 @@
         }
     },
     "letters": {
-        "Marianne's Total Letters": {
-            "polite": 15,
-            "formal": 84,
-            "lexical_rich": 119,
-            "adjectives_adverbs": 60,
-            "total_words": 488
-        },
         "Lucy's Second Letter": {
             "polite": 8,
             "formal": 12,
             "lexical_rich": 37,
             "adjectives_adverbs": 31,
             "total_words": 175
-        },
-        "Marianne's Second Letter": {
-            "polite": 5,
-            "formal": 22,
-            "lexical_rich": 32,
-            "adjectives_adverbs": 23,
-            "total_words": 156
         },
         "Lucy's First Letter": {
             "polite": 20,
@@ -51,19 +37,19 @@
             "adjectives_adverbs": 56,
             "total_words": 387
         },
-        "Marianne's First Letter": {
-            "polite": 4,
-            "formal": 14,
-            "lexical_rich": 21,
-            "adjectives_adverbs": 6,
-            "total_words": 78
-        },
         "Willoughby's First Letter": {
             "polite": 6,
             "formal": 42,
             "lexical_rich": 68,
             "adjectives_adverbs": 34,
             "total_words": 247
+        },
+        "Marianne's Total Letters": {
+            "polite": 15,
+            "formal": 84,
+            "lexical_rich": 119,
+            "adjectives_adverbs": 60,
+            "total_words": 488
         }
     }
 }

@@ -80,20 +80,25 @@ def format_filename(folder, filename):
 
     if folder == 'quotes':
         if 'total' in base_name:
-            return "Marianne's Direct Speech, All Volumes" if 'marianne' in base_name else base_name
-            return "Willoughby's Direct Speech, All Volumes" if 'willoughby' in base_name else base_name
-            return "Lucy's Direct Speech, All Volumes" if 'lucy' in base_name else base_name
+            if 'marianne' in base_name:
+                return "Marianne's Speech, All Volumes"
+            elif 'willoughby' in base_name:
+                return "Willoughby's Speech, All Volumes"
+            elif 'lucy' in base_name:
+                return "Lucy's Speech, All Volumes"
+            else:
+                return base_name
         parts = base_name.split()
         character = parts[0].capitalize()
         volume = re.findall(r'\d+', base_name)[-1] 
-        return f"{character} Direct Quotes, Volume {volume}"
+        return f"{character} Quotes, Volume {volume}"
 
     elif folder == 'letters':
         if 'total' in base_name:
             return f"{base_name.split()[0].capitalize()}'s Total Letters"
         parts = base_name.split()
         character = parts[0].capitalize()
-        number_word = 'First' if '1' in parts[-1] else 'Second' 
+        number_word = 'First' if '1' in parts[-1] else 'Second' if '2' in parts[-1] else 'Third'
         return f"{character}'s {number_word} Letter"
 
 def process_folder(folder_path, folder_type):
