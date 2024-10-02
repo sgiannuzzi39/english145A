@@ -1,26 +1,23 @@
 import json
 import re
+import os
 
-polite_words = {
-    'please', 'thank', 'thanks', 'sorry', 'excuse', 'pardon', 'appreciate',
-    'grateful', 'kindly', 'would you', 'could you', 'might you', 'if you please', 
-    'most obliged', 'be so kind', 'if you would', 'forgive me', 'your humble servant', 
-    'I trust', 'your obedient servant', 'may I', 'allow me', 'might I', 'perhaps you could'
-}
+polite_words = {'please', 'thank', 'thanks', 'sorry', 'excuse', 'pardon', 'appreciate',
+                'grateful', 'kindly', 'would you', 'could you', 'might you', 'if you please', 
+                'most obliged', 'be so kind', 'if you would', 'forgive me', 'your humble servant', 
+                'I trust', 'your obedient servant', 'may I', 'allow me', 'might I', 'perhaps you could'}
 
-formal_words = {
-    'therefore', 'moreover', 'hence', 'thus', 'notwithstanding', 'consequently',
-    'respectfully', 'endeavor', 'commence', 'forthwith', 'inasmuch as', 'heretofore', 
-    'inasmuch', 'whereupon', 'thereupon', 'hitherto', 'whom', 'shall', 'must', 'be it known',
-    'on behalf of', 'pursuant to', 'in accordance with', 'by virtue of', 'as per'
-}
+formal_words = {'therefore', 'moreover', 'hence', 'thus', 'notwithstanding', 'consequently',
+                'respectfully', 'endeavor', 'commence', 'forthwith', 'inasmuch as', 'heretofore', 
+                'inasmuch', 'whereupon', 'thereupon', 'hitherto', 'whom', 'shall', 'must', 'be it known',
+                'on behalf of', 'pursuant to', 'in accordance with', 'by virtue of', 'as per'}
 
 lexical_rich_min_length = 5  
 
 def preprocess_text(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9\s]', '', text)  
-    words = text.split() 
+    words = text.split()  
     return words
 
 def is_polite(word):
@@ -34,55 +31,50 @@ def categorize_word(word):
     polite = is_polite(word)
     formal = is_formal(word)
     lexical_rich = len(word) > lexical_rich_min_length
-    return polite, formal, lexical_rich
+    other = not (polite or formal or lexical_rich)
+    return polite, formal, lexical_rich, other
 
 def structure_words_by_category(categorized_words):
     polite_words = [entry['word'] for entry in categorized_words if entry['polite']]
     formal_words = [entry['word'] for entry in categorized_words if entry['formal']]
     lexical_rich_words = [entry['word'] for entry in categorized_words if entry['lexical_rich']]
-    return polite_words, formal_words, lexical_rich_words
+    other_words = [entry['word'] for entry in categorized_words if not (entry['polite'] or entry['formal'] or entry['lexical_rich'])]
+    return polite_words, formal_words, lexical_rich_words, other_words
 
 def categorize_words(words):
     categorized_words = []
-
     for word in words:
-        polite, formal, lexical_rich = categorize_word(word)
+        polite, formal, lexical_rich, other = categorize_word(word)
         categorized_words.append({
             'word': word,
             'polite': polite,
             'formal': formal,
-            'lexical_rich': lexical_rich
+            'lexical_rich': lexical_rich,
+            'other': other
         })
     
     return categorized_words
 
-with open('letters/willoughby_letter.txt', 'r') as f1:
-    letter1 = f1.read()
-
-with open('letters/marianne_letter3.txt', 'r') as f2:
-    letter2 = f2.read()
-
-letter1_words = preprocess_text(letter1)
-letter2_words = preprocess_text(letter2)
-
-categorized_words1 = categorize_words(letter1_words)
-categorized_words2 = categorize_words(letter2_words)
-
-polite1, formal1, lexical_rich1 = structure_words_by_category(categorized_words1)
-polite2, formal2, lexical_rich2 = structure_words_by_category(categorized_words2)
-
-data = {
-    "letter1": {
-        "polite": polite1,
-        "formal": formal1,
-        "lexical_rich": lexical_rich1
-    },
-    "letter2": {
-        "polite": polite2,
-        "formal": formal2,
-        "lexical_rich": lexical_rich2
+def file_to_json(filename):
+    with open(filename, 'r') as f:
+        text = f.read()
+    words = preprocess_text(text)
+    categorized_words = categorize_words(words)
+    polite, formal, lexical_rich, other = structure_words_by_category(categorized_words)
+    return {
+        "polite": polite,
+        "formal": formal,
+        "lexical_rich": lexical_rich,
+        "other": other  
     }
-}
+
+letters_dir = '/Users/sgiannuzzi/Desktop/english145A/letters'
+data = {}
+for filename in os.listdir(letters_dir):
+    if filename.endswith('.txt'):
+        letter_path = os.path.join(letters_dir, filename)
+        letter_name = os.path.splitext(filename)[0]  
+        data[letter_name] = file_to_json(letter_path)
 
 with open('word_categories.json', 'w') as f:
     json.dump(data, f, indent=4)
