@@ -91,7 +91,6 @@ def format_filename(folder, filename):
         parts = base_name.split()
         character = parts[0].capitalize()
         volume = re.findall(r'\d+', base_name)[-1] 
-        return f"{character} Quotes, Volume {volume}"
 
     elif folder == 'letters':
         if 'total' in base_name:

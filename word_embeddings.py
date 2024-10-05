@@ -9,42 +9,40 @@ def load_and_preprocess(filepath):
     with open(filepath, 'r') as file:
         text = file.read().lower()
     doc = nlp(text)
-    tokens = [token.text for token in doc if token.is_alpha] 
+    tokens = [token.text for token in doc if token.is_alpha]  
     return tokens
 
 speech_words = load_and_preprocess("/Users/sgiannuzzi/Desktop/english145A/quotes/marianne_total.txt")
 letter_words = load_and_preprocess("/Users/sgiannuzzi/Desktop/english145A/letters/marianne_total.txt")
 
+common_topics = ["love", "people", "suffering", "family", "money", "society", "friendship", "marriage", "virtue", "pain"]
+
+all_words = speech_words + letter_words + common_topics
+
 def get_embeddings(words):
     return np.array([nlp(word).vector for word in words if word in nlp.vocab])
 
-speech_embeddings = get_embeddings(speech_words)
-letter_embeddings = get_embeddings(letter_words)
-
-all_embeddings = np.vstack([speech_embeddings, letter_embeddings])
+word_embeddings = get_embeddings(all_words)
 
 tsne = TSNE(n_components=2, random_state=0)
-reduced_embeddings = tsne.fit_transform(all_embeddings)
+reduced_embeddings = tsne.fit_transform(word_embeddings)
+
+speech_reduced = reduced_embeddings[:len(speech_words)]
+letter_reduced = reduced_embeddings[len(speech_words):len(speech_words) + len(letter_words)]
+topic_reduced = reduced_embeddings[len(speech_words) + len(letter_words):]
 
 embedding_data = []
 
-for i, (x, y) in enumerate(reduced_embeddings[:len(speech_embeddings)]):
-    embedding_data.append({
-        "word": speech_words[i],
-        "x": float(x),
-        "y": float(y),
-        "source": "speech"
-    })
+for i, word in enumerate(speech_words):
+    embedding_data.append({"word": word, "x": float(speech_reduced[i][0]), "y": float(speech_reduced[i][1]), "source": "speech"})
 
-for i, (x, y) in enumerate(reduced_embeddings[len(speech_embeddings):]):
-    embedding_data.append({
-        "word": letter_words[i],
-        "x": float(x),
-        "y": float(y),
-        "source": "letters"
-    })
+for i, word in enumerate(letter_words):
+    embedding_data.append({"word": word, "x": float(letter_reduced[i][0]), "y": float(letter_reduced[i][1]), "source": "letters"})
 
-with open("embedding_data.json", "w") as f:
-    json.dump(embedding_data, f, indent=4)
+for i, word in enumerate(common_topics):
+    embedding_data.append({"word": word, "x": float(topic_reduced[i][0]), "y": float(topic_reduced[i][1]), "source": "topic"})
 
-print("Embedding data saved to embedding_data.json")
+with open("embedding_data_with_topics.json", "w") as f:
+    json.dump(embedding_data, f)
+
+print("Word embeddings with common topics saved to 'embedding_data_with_topics.json'")

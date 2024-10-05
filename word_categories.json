@@ -30,12 +30,33 @@
             "adjectives_adverbs": 31,
             "total_words": 175
         },
+        "Marianne's Third Letter": {
+            "polite": 6,
+            "formal": 48,
+            "lexical_rich": 66,
+            "adjectives_adverbs": 31,
+            "total_words": 254
+        },
+        "Marianne's Second Letter": {
+            "polite": 5,
+            "formal": 22,
+            "lexical_rich": 32,
+            "adjectives_adverbs": 23,
+            "total_words": 156
+        },
         "Lucy's First Letter": {
             "polite": 20,
             "formal": 45,
             "lexical_rich": 82,
             "adjectives_adverbs": 56,
             "total_words": 387
+        },
+        "Marianne's First Letter": {
+            "polite": 4,
+            "formal": 14,
+            "lexical_rich": 21,
+            "adjectives_adverbs": 6,
+            "total_words": 78
         },
         "Willoughby's First Letter": {
             "polite": 6,

@@ -202,7 +202,7 @@
                 adj_adv: "Adjectives & Adverbs"
             };
 
-            const colorPalette = ["#a3c1da", "#2a63ad", "#002b94", "#002b94", "#88b3d1", "#6fa5c8", "#578fbf", "#4079b6", "#1450a5", "#003d9c"];
+            const colorPalette = ["#a3c1da", "#405880", "#4079b6", "#6fa5c8", "#002b94", "#2a63ad", "#88b3d1", "#578fbf", "#1450a5", "#003d9c"];
 
             const personBarChartsDiv = d3.select("#person-bar-charts");
 
@@ -331,7 +331,29 @@
             "letters": "#2a63ad"
         };
 
-        d3.json("embedding_data.json").then(function(data) {
+        const commonTopics = [{
+            word: "love",
+            x: 50,
+            y: 50
+        }, {
+            word: "people",
+            x: -10,
+            y: -20
+        }, {
+            word: "suffering",
+            x: 30,
+            y: 30
+        }, {
+            word: "family",
+            x: 60,
+            y: -40
+        }, {
+            word: "money",
+            x: -50,
+            y: 50
+        }];
+
+        d3.json("embedding_data_with_topics.json").then(function(data) {
 
             const xExtent = d3.extent(data, d => d.x);
             const yExtent = d3.extent(data, d => d.y);
@@ -379,10 +401,23 @@
                     d3.select(".tooltip").remove();
                 });
 
-            svgEmbedding.selectAll("g.axis").remove();
+            svgEmbedding.selectAll(".topic-label")
+                .data(commonTopics)
+                .enter()
+                .append("text")
+                .attr("class", "topic-label")
+                .attr("x", d => xScale(d.x))
+                .attr("y", d => yScale(d.y))
+                .attr("text-anchor", "middle")
+                .attr("font-size", "14px")
+                .attr("font-weight", "bold")
+                .attr("fill", "#ff5733")
+                .text(d => d.word);
 
+            svgEmbedding.selectAll("g.axis").remove();
         });
     </script>
+
 
 </body>
 
